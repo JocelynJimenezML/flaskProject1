@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CONSUMO DE CHATGPT (API) CON FLASK Y JINJATWO</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url(https://marketplace.canva.com/EAEK4dC2olw/1/0/1600w/canva-arco%C3%ADris-gradiente-rosa-y-naranja-fondo-virtual-c3PYha1JI9M.jpg);
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        form {
+            width: 80%;
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        textarea, input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+
+        }
+
+        input[type="submit"] {
+            background-color: #6485ad;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            align-items: center;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #944fec;
+            align-content: center;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <h1>
+       wolaaaaaaa
+    </h1>
+    <form action="/" method="post">
+        <hr>
+        <p>
+            <textarea name="chat" disabled rows="10" cols="120">
+                {% for mensaje in conversacion %}
+                {{ mensaje[0] }}: {{ mensaje[1] }}{% if not loop.last %}{% endif %}
+                {% endfor %}
+            </textarea ><h2>"PREGUNTA TU DUDA  A TU ASISTENTE VIRTUAL"</h2>
+        </p>
+        <hr>
+        <p>¿QUÉ TE GUSTARIA SABER?<input type="text" required name="pregunta" value="{{ pregunta }}" size="50" >
+        <input type="submit" value="Enviar" ></p>
+    </form>
+</body>
+</html>
